@@ -13,9 +13,12 @@ pipeline {
             }
         }
 		stage('script'){
-			writeFile file: 'output.txt', text: 'asdf testing message'
-			env.FILENAME = readFile  'output.txt'
-		
+			steps{
+					script{
+					writeFile file: 'output.txt', text: 'asdf testing message'
+					env.FILENAME = readFile  'output.txt'
+					}
+			}
 		}
         stage('Test') {
             steps {
