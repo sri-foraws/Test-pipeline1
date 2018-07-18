@@ -15,6 +15,7 @@ pipeline {
 			environment{
 			
 				my_var = "${env.BUILD_ID + '/working'}"
+				name = "sridhar"
 			}
 		
 			steps{
@@ -26,7 +27,7 @@ pipeline {
 					sh 'touch $my_var/test.txt'
 					sh 'export MY_EX=$my_var/test.txt'
 					
-					echo '$MY_EX'
+					sh 'echo $name'
 			}
 		}
         stage('Test') {
