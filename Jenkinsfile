@@ -1,4 +1,3 @@
-Jenkinsfile (Declarative Pipeline)
 
 pipeline {
     agent any
@@ -6,7 +5,9 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Building..'
+                echo 'Building.. step'
+				sh 'make'
+				archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true
             }
         }
         stage('Test') {
