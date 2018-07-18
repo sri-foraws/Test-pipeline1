@@ -1,6 +1,13 @@
 
 pipeline {
     agent any
+	
+	environment{
+	
+		build_num = "${env.BUILD_ID}"
+	
+	}
+	
 
     stages {
         stage('Build') {
@@ -28,6 +35,8 @@ pipeline {
 					sh 'export MY_EX=$my_var/test.txt'
 					
 					sh 'echo $name'
+					
+					sh 'echo $build_num'
 			}
 		}
         stage('Test') {
