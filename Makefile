@@ -35,8 +35,7 @@ FILE=
 # Remember that there must be a < tab > before the command line ('rule') 
 #
 
-.java.class:
-        $(JC) $(JFLAGS) $*.java
+.java.class: $(JC) $(JFLAGS) $*.java
 
 
 #
