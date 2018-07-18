@@ -26,7 +26,7 @@ pipeline {
 					sh 'touch $my_var/test.txt'
 					sh 'export MY_EX=$my_var/test.txt'
 					
-					sh 'echo $MY_EX'
+					echo '$MY_EX'
 			}
 		}
         stage('Test') {
