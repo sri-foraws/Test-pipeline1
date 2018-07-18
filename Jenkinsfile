@@ -7,7 +7,9 @@ pipeline {
             steps {
                 echo 'Building.. step'
 				sh 'make'
-				
+				def userName = 'Jenkins'
+				echo 'Hello Mr. ${userName}'
+				echo "I said Hello Mr. ${userName}'
             }
         }
         stage('Test') {
