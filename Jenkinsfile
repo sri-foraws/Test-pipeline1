@@ -12,9 +12,15 @@ pipeline {
 				echo "I said Hello Mr. ${userName}"
             }
         }
+		stage('script'){
+			writeFile file: 'output.txt', text: 'asdf testing message'
+			env.FILENAME = readFile  'output.txt'
+		
+		}
         stage('Test') {
             steps {
                 echo 'Testing..'
+				echo "${env.FILENAME}"
             }
         }
         stage('Deploy') {
