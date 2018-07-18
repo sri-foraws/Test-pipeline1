@@ -24,7 +24,7 @@ pipeline {
 					}
 					sh 'mkdir -p $my_var'
 					sh 'touch $my_var/test.txt'
-					sh 'export MY_EX = $my_var/test.txt'
+					sh 'export MY_EX=$my_var/test.txt'
 					
 					sh 'echo $MY_EX'
 			}
